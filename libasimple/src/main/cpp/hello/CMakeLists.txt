@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.4.1)
 
 set(CMAKE_VERBOSE_MAKEFILE on)
 
-add_library(hello STATIC src/libahello.cpp)
+add_library(hello STATIC src/ahello.cpp)
 
 set(export_dir ${CMAKE_CURRENT_SOURCE_DIR}/../../../../../export)
 
@@ -13,7 +13,9 @@ set_target_properties(
         "${export_dir}/libahello/lib/${ANDROID_ABI}")
 
 add_custom_command(
-        TARGET hello POST_BUILD
-        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/libhello.h" "${export_dir}/libahello/include/libhello.h"
+        TARGET
+        hello
+        POST_BUILD
+        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/ahello.h" "${export_dir}/libahello/include/ahello.h"
 )
 

@@ -1,9 +1,9 @@
 //
 // Created by xong on 2018/9/25.
 //
-#include "libahello.h"
+#include "ahello.h"
 
-int libahello(int i )
+int ahello(int i)
 {
     return i + 1;
 }

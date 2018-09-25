@@ -5,6 +5,6 @@
 #ifndef USECMAKEBUILDLIB_LIBAHELLO_H
 #define USECMAKEBUILDLIB_LIBAHELLO_H
 
-int libahello(int i );
+int ahello(int i);
 
 #endif //USECMAKEBUILDLIB_LIBAHELLO_H
