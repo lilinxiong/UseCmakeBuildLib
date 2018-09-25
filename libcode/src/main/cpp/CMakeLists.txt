@@ -12,7 +12,9 @@ add_library(
         share/useCode.cpp
 )
 
-target_include_directories(usecode_lib PRIVATE
+target_include_directories(
+        usecode_lib
+        PRIVATE
         src/main/cpp/moudle/jsoncpp/json)
 
 target_link_libraries(

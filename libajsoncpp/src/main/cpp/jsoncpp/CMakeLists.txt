@@ -11,10 +11,12 @@ add_library(jsoncpp STATIC
         src/version.h.in)
 
 set(export_dir ${CMAKE_CURRENT_SOURCE_DIR}/../../../../../export)
-set_target_properties(jsoncpp
-                      PROPERTIES
-                      ARCHIVE_OUTPUT_DIRECTORY
-                      "${export_dir}/libajsoncpp/lib/${ANDROID_ABI}")
+
+set_target_properties(
+        jsoncpp
+        PROPERTIES
+        ARCHIVE_OUTPUT_DIRECTORY
+        "${export_dir}/libajsoncpp/lib/${ANDROID_ABI}")
 
 #add_custom_command(
 #        TARGET jsoncpp POST_BUILD
@@ -46,5 +48,4 @@ set_target_properties(jsoncpp
 add_custom_command(
         TARGET jsoncpp POST_BUILD
         COMMAND "${CMAKE_COMMAND}" -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/src/json" "${export_dir}/libajsoncpp/include/json/"
-        COMMENT "Copying libajsoncpp to output directory"
 )
