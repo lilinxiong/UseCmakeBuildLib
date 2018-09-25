@@ -13,3 +13,5 @@ Google例子:https://github.com/googlesamples/android-ndk/tree/master/hello-libs
     构建一个hello简单的.a静态库，且将.a和所需头文件导出到 project/export/libahello 目录中
 * **libajsoncpp:**
     构建jsoncpp的.a静态库，且将.a和所需头文件导出到 project/export/libajsoncpp 目录中
+
+**注：** export 是编译 任何一个模块 自己在当前项目目录下自动生成的。
