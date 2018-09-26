@@ -3,23 +3,27 @@ cmake_minimum_required(VERSION 3.4.1)
 # 设置变量
 set(export_dir ${CMAKE_SOURCE_DIR}/../../../../export)
 
-# 使用.so动态库(hello)
+# 添加.so动态库(hello)
 add_library(lib_so_hello SHARED IMPORTED)
+# 链接so
 set_target_properties(lib_so_hello PROPERTIES IMPORTED_LOCATION
         ${export_dir}/libsohello/lib/${ANDROID_ABI}/libhello.so)
 
-# 使用.so动态库(jsoncpp)
+# 添加.so动态库(jsoncpp)
 add_library(lib_so_jsoncpp SHARED IMPORTED)
+# 链接
 set_target_properties(lib_so_jsoncpp PROPERTIES IMPORTED_LOCATION
         ${export_dir}/libsojsoncpp/lib/${ANDROID_ABI}/libjsoncpp.so)
 
-# 使用.a静态库(hello)
+# 添加.a静态库(hello)
 add_library(lib_a_hello STATIC IMPORTED)
+# 链接
 set_target_properties(lib_a_hello PROPERTIES IMPORTED_LOCATION
         ${export_dir}/libahello/lib/${ANDROID_ABI}/libhello.a)
 
-# 使用.a静态库(jsoncpp)
+# 添加.a静态库(jsoncpp)
 add_library(lib_a_jsoncpp STATIC IMPORTED)
+# 链接
 set_target_properties(lib_a_jsoncpp PROPERTIES IMPORTED_LOCATION
         ${export_dir}/libajsoncpp/lib/${ANDROID_ABI}/libjsoncpp.a)
 
@@ -29,6 +33,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
 add_library(
         native_test
         SHARED
+        # new project cpp
+        native_lib.cpp
         # .so hello
         native_so_hello_test.cpp
         # .a hello
