@@ -1,7 +1,7 @@
-### 使用Cmake构建.a静态库和.so动态库
+## 使用Cmake构建.a静态库和.so动态库
 Google例子:https://github.com/googlesamples/android-ndk/tree/master/hello-libs
 
-#### Demo中子模块说明:
+### Demo中子模块说明:
 
 * **libcode:**
     以源码的形式将SDK依赖到cpp中使用
@@ -16,7 +16,7 @@ Google例子:https://github.com/googlesamples/android-ndk/tree/master/hello-libs
 
 
 
-##### 注：
+### 注：
 1. export 是编译 任何一个模块 自己在当前项目目录下自动生成的;
 1. app/src/main/cpp/CmakeLists.txt 中的注释是关于链接so动态库、a静态库、链接头文件到native;
 1. libasimple/build.gradle 中需要设置一下 targets 名称，最好和 libasimple/src/main/cpp/hello/CmakeLists.txt 中的名字一样 如下:
