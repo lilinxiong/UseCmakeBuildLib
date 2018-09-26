@@ -20,6 +20,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+//    当使用so动态库时 必须设置so库路径让gradle将需要的库打到apk中，若不需要动态库，则将以下命令注释 sourceSets{ }
     sourceSets {
         main {
             jniLibs.srcDirs = ['../export/libsohello/lib', '../export/libsojsoncpp/lib']
@@ -36,5 +37,23 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation project(':libcode')
+    // 若需要测试源码方式，则打开以下注释，且在 setting.gradle 中 打开 include ':libcode' 注释
+//    implementation project(':libcode')
 }
+
+// 若需要每次都编译libajsoncpp，则在setting.gradle中打开 include ':libajsoncpp' 注释 且将以下的tasks打开，
+//tasks.whenTaskAdded { task ->
+//    if (task.name == 'externalNativeBuildRelease') {
+//        task.dependsOn ":libajsoncpp:externalNativeBuildRelease"
+//    } else if (task.name == 'externalNativeBuildDebug') {
+//        task.dependsOn ":libajsoncpp:externalNativeBuildDebug"
+//    }
+//}
+// 若需要每次都编译libasimple，则在setting.gradle中打开 include ':libasimple' 注释 且将以下的tasks打开，
+//tasks.whenTaskAdded { task ->
+//    if (task.name == 'externalNativeBuildRelease') {
+//        task.dependsOn ":libasimple:externalNativeBuildRelease"
+//    } else if (task.name == 'externalNativeBuildDebug') {
+//        task.dependsOn ":libasimple:externalNativeBuildDebug"
+//    }
+//}

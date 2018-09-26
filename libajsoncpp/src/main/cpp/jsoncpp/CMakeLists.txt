@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 3.4.1)
 
 set(CMAKE_VERBOSE_MAKEFILE on)
 
-add_library(jsoncpp STATIC
+add_library(
+        jsoncpp
+        STATIC
         src/json_tool.h
         src/json_reader.cpp
         src/json_valueiterator.inl
@@ -14,10 +16,9 @@ set(export_dir ${CMAKE_CURRENT_SOURCE_DIR}/../../../../../export)
 
 set_target_properties(
         jsoncpp
-        PROPERTIES
-        ARCHIVE_OUTPUT_DIRECTORY
-        "${export_dir}/libajsoncpp/lib/${ANDROID_ABI}")
+        PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${export_dir}/libajsoncpp/lib/${ANDROID_ABI}")
 
+# 按文件挨个导出头文件
 #add_custom_command(
 #        TARGET jsoncpp POST_BUILD
 
@@ -45,7 +46,9 @@ set_target_properties(
 
 #        COMMENT "Copying libajsoncpp to output directory")
 
+# 按文件夹导出
 add_custom_command(
         TARGET jsoncpp POST_BUILD
+        # 将 ${CMAKE_CURRENT_SOURCE_DIR}/src/json 文件夹下的文件 导出到 ${export_dir}/libajsoncpp/include/json/ 文件夹内
         COMMAND "${CMAKE_COMMAND}" -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/src/json" "${export_dir}/libajsoncpp/include/json/"
 )

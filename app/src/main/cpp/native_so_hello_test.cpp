@@ -5,7 +5,8 @@
 #include "sohello.h"
 extern "C" JNIEXPORT
 jint JNICALL
-Java_com_xong_jni_NativeHelloSoLib_intFromHelloSo(JNIEnv *env, jclass type, jint i)
+Java_com_xong_jni_NativeHelloSoLib_intFromHelloSo(JNIEnv *env, jclass type,
+                                                  jint i)
 {
     return sohello(i);
 }

@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.xong.libcode.jni.NativeCode;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -13,25 +11,35 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView tv_libs_content = findViewById(R.id.tv_libs_content);
+
         // new project
 //        tv_libs_content.setText(Nativelib.stringFromNativeLib());
-//        调用源码方式中生成json函数
-        String outputJsonCode = NativeCode.outputJsonCode("xong", "21", "man", "code");
+
+        /**---------------------------libcode---------------------------*/
+//        集成cpp源码方式生成json字符串
+//        String outputJsonCode = NativeCode.outputJsonCode("xong", "21", "man", "code");
 //        tv_libs_content.setText(outputJsonCode);
-//        调用源码方式中解析json函数
-        String parseJsonCode = NativeCode.parseJsonCode(outputJsonCode);
-        tv_libs_content.setText(parseJsonCode);
+//        集成cpp源码方式中解析json函数
+//        String parseJsonCode = NativeCode.parseJsonCode(outputJsonCode);
+//        tv_libs_content.setText(parseJsonCode);
+
+        /**---------------------------libasimple---------------------------*/
         // 调用hello.a静态库中的函数
 //        tv_libs_content.setText(String.valueOf(NativeHelloALib.intFromHelloA(100)));
+
+        /**---------------------------libsosimple---------------------------*/
         // 调用hello.so动态库中的函数
 //        tv_libs_content.setText(String.valueOf(NativeHelloSoLib.intFromHelloSo(10)));
-        // 调用jsoncpp.a静态库中的函数
+
+        /**---------------------------libajsoncpp---------------------------*/
 //        调用jsoncpp.a生成json
 //        String outputJson = NativeJsonALib.outputJsonA("xong", "21", "man");
 //        tv_libs_content.setText(outputJson);
 ////      调用jsoncpp.a解析json
 //        String parseJson = NativeJsonALib.parseJsonA(outputJson);
 //        tv_libs_content.setText(parseJson);
+
+        /**---------------------------libsojsoncpp---------------------------*/
 //        调用jsoncpp.so生成json
 //        String outputJsonSo = NativeJsonSoLib.outputJsonSo("xong", "21", "man", "so");
 //        tv_libs_content.setText(outputJsonSo);

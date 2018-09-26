@@ -14,4 +14,24 @@ Google例子:https://github.com/googlesamples/android-ndk/tree/master/hello-libs
 * **libajsoncpp:**
     构建jsoncpp的.a静态库，且将.a和所需头文件导出到 project/export/libajsoncpp 目录中
 
-**注：** export 是编译 任何一个模块 自己在当前项目目录下自动生成的。
+
+
+##### 注：
+1. export 是编译 任何一个模块 自己在当前项目目录下自动生成的。
+1. app/src/main/cpp/CmakeLists.txt 中的注释是关于链接so动态库、a静态库、链接头文件到native。
+1. libasimple/src/main/cpp/CmakeLists.txt 中的注释是关于 编译前期目录配置 和 链接 子目录。
+1. libasimple/src/main/cpp/hello/CmakeLists.txt 中的注释是关于 库名字、库类型、库导出路径、头文件导出。
+1. libsosimple/src/main/cpp/hello/CmakeLists.txt 中的注释是关于 so动态库如何导出，相比 **第4条** 只改了一个参数。
+1. libajsoncpp/src/main/cpp/jsoncpp/CmakeLists.txt 中的注释是关于 相比 **第4条** 多了一个 按文件夹导出的命令。
+1. app/build.gradle 中最重要的注释是关于集成so动态库时的注意事项，配置如下:
+```
+android {
+...
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['../export/libsohello/lib', '../export/libsojsoncpp/lib']
+        }
+    }
+...
+}
+```
