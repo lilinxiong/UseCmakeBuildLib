@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.xong.jni.NativeJsonSoLib;
+import com.xong.libcode.jni.NativeCode;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,6 +15,12 @@ public class MainActivity extends AppCompatActivity {
         TextView tv_libs_content = findViewById(R.id.tv_libs_content);
         // new project
 //        tv_libs_content.setText(Nativelib.stringFromNativeLib());
+//        调用源码方式中生成json函数
+        String outputJsonCode = NativeCode.outputJsonCode("xong", "21", "man", "code");
+//        tv_libs_content.setText(outputJsonCode);
+//        调用源码方式中解析json函数
+        String parseJsonCode = NativeCode.parseJsonCode(outputJsonCode);
+        tv_libs_content.setText(parseJsonCode);
         // 调用hello.a静态库中的函数
 //        tv_libs_content.setText(String.valueOf(NativeHelloALib.intFromHelloA(100)));
         // 调用hello.so动态库中的函数
@@ -27,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
 //        String parseJson = NativeJsonALib.parseJsonA(outputJson);
 //        tv_libs_content.setText(parseJson);
 //        调用jsoncpp.so生成json
-        String outputJsonSo = NativeJsonSoLib.outputJsonSo("xong", "21", "man", "so");
-        tv_libs_content.setText(outputJsonSo);
+//        String outputJsonSo = NativeJsonSoLib.outputJsonSo("xong", "21", "man", "so");
+//        tv_libs_content.setText(outputJsonSo);
 //        调用jsoncpp.so解析json
 //        String parseJsonSo = NativeJsonSoLib.parseJsonSo(outputJsonSo);
 //        tv_libs_content.setText(parseJsonSo);

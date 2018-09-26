@@ -1,6 +1,6 @@
 include ':app'
 // 拷贝源码
-//include ':libcode'
+include ':libcode'
 //// 构建简单的so动态库
 //include ':libsosimple'
 //// 构建jsoncpp so动态库
