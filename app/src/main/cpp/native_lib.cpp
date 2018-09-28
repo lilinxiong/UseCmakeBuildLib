@@ -3,10 +3,11 @@
 //
 #include <jni.h>
 #include <string>
+#define XONGFUNC(name)Java_com_xong_jni_##name
 
 extern "C" JNIEXPORT
 jstring JNICALL
-Java_com_xong_jni_Nativelib_stringFromNativeLib(JNIEnv *env, jclass type) {
+XONGFUNC(Nativelib_stringFromNativeLib)(JNIEnv *env, jclass type) {
     std::string str = "hello from native_lib";
     // 思考下：
     // 为啥不是构建一个string然后调用env->NewStringUTF(str.c_str())

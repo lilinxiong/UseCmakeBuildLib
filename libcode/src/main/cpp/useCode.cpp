@@ -3,10 +3,11 @@
 //
 #include <jni.h>
 #include "jsoncpp/json/json.h"
+#define XONGFUNC(name)Java_com_xong_libcode_jni_##name
 
 extern "C" JNIEXPORT
 jstring JNICALL
-Java_com_xong_libcode_jni_NativeCode_outputJsonCode(JNIEnv *env, jclass thiz,
+XONGFUNC(NativeCode_outputJsonCode)(JNIEnv *env, jclass thiz,
                                              jstring jname, jstring jage, jstring jsex, jstring jtype)
 {
     Json::Value root;
@@ -23,7 +24,7 @@ Java_com_xong_libcode_jni_NativeCode_outputJsonCode(JNIEnv *env, jclass thiz,
 
 extern "C" JNIEXPORT
 jstring JNICALL
-Java_com_xong_libcode_jni_NativeCode_parseJsonCode(JNIEnv *env, jclass thiz,
+XONGFUNC(NativeCode_parseJsonCode)(JNIEnv *env, jclass thiz,
                                             jstring jjson)
 {
     const char *json_str = env->GetStringUTFChars(jjson, NULL);
