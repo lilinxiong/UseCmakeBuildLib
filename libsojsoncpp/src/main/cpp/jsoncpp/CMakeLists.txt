@@ -19,29 +19,29 @@ set_target_properties(
 #add_custom_command(
 #        TARGET jsoncpp POST_BUILD
 
-#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/allocator.h" "${distribution_DIR}/libsojsoncpp/include/json/allocator.h"
+#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/allocator.h" "${export_dir}/libsojsoncpp/include/json/allocator.h"
 #
-#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/config.h" "${distribution_DIR}/libsojsoncpp/include/json/config.h"
+#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/config.h" "${export_dir}/libsojsoncpp/include/json/config.h"
 #
-#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/forwards.h" "${distribution_DIR}/libsojsoncpp/include/json/forwards.h"
+#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/forwards.h" "${export_dir}/libsojsoncpp/include/json/forwards.h"
 #
-#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/features.h" "${distribution_DIR}/libsojsoncpp/include/json/features.h"
+#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/features.h" "${export_dir}/libsojsoncpp/include/json/features.h"
 #
-#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/value.h" "${distribution_DIR}/libsojsoncpp/include/json/value.h"
+#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/value.h" "${export_dir}/libsojsoncpp/include/json/value.h"
 #
-#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/reader.h" "${distribution_DIR}/libsojsoncpp/include/json/reader.h"
+#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/reader.h" "${export_dir}/libsojsoncpp/include/json/reader.h"
 #
-#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/writer.h" "${distribution_DIR}/libsojsoncpp/include/json/writer.h"
+#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/writer.h" "${export_dir}/libsojsoncpp/include/json/writer.h"
 #
-#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/assertions.h" "${distribution_DIR}/libsojsoncpp/include/json/assertions.h"
+#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/assertions.h" "${export_dir}/libsojsoncpp/include/json/assertions.h"
 #
-#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/autolink.h"  "${distribution_DIR}/libsojsoncpp/include/json/autolink.h"
+#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/autolink.h"  "${export_dir}/libsojsoncpp/include/json/autolink.h"
 #
-#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/json.h"  "${distribution_DIR}/libsojsoncpp/include/json/json.h"
+#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/json.h"  "${export_dir}/libsojsoncpp/include/json/json.h"
 #
-#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/version.h"  "${distribution_DIR}/libsojsoncpp/include/json/version.h"
+#        COMMAND "${CMAKE_COMMAND}" -E copy "${CMAKE_CURRENT_SOURCE_DIR}/src/json/version.h"  "${export_dir}/libsojsoncpp/include/json/version.h"
 
-#        COMMENT "Copying libajsoncpp to output directory")
+#        )
 
 add_custom_command(
         TARGET jsoncpp POST_BUILD
