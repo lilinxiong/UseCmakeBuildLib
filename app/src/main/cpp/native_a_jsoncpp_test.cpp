@@ -15,10 +15,17 @@ XONGFUNC(NativeJsonALib_outputJsonA)(JNIEnv *env, jclass thiz,
     const char *age = env->GetStringUTFChars(jage, NULL);
     const char *sex = env->GetStringUTFChars(jsex, NULL);
     const char *type = env->GetStringUTFChars(jtype, NULL);
+
     root["name"] = name;
     root["age"] = age;
     root["sex"] = sex;
     root["type"] = type;
+
+    env->ReleaseStringUTFChars(jname, name);
+    env->ReleaseStringUTFChars(jage, age);
+    env->ReleaseStringUTFChars(jsex, sex);
+    env->ReleaseStringUTFChars(jtype, type);
+
     return env->NewStringUTF(root.toStyledString().c_str());
 }
 
@@ -42,5 +49,8 @@ XONGFUNC(NativeJsonALib_parseJsonA)(JNIEnv *env, jclass thiz,
         std::string type = root["type"].asString();
         out_str = "name: " + name + "\nage: " + age + "\nsex:" + sex + "\ntype: " + type + "\n";
     }
+
+    env->ReleaseStringUTFChars(jjson, json_str);
+
     return env->NewStringUTF(out_str.c_str());
 }

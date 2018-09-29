@@ -19,6 +19,12 @@ XONGFUNC(NativeJsonSoLib_outputJsonSo)(JNIEnv *env, jclass thiz,
     root["age"] = age;
     root["sex"] = sex;
     root["type"] = type;
+
+    env->ReleaseStringUTFChars(jname, name);
+    env->ReleaseStringUTFChars(jage, age);
+    env->ReleaseStringUTFChars(jsex, sex);
+    env->ReleaseStringUTFChars(jtype, type);
+
     return env->NewStringUTF(root.toStyledString().c_str());
 }
 
@@ -42,5 +48,8 @@ XONGFUNC(NativeJsonSoLib_parseJsonSo)(JNIEnv *env, jclass thiz,
         std::string type = root["type"].asString();
         out_str = "name: " + name + "\nage: " + age + "\nsex: " + sex + "\ntype: " + type + "\n";
     }
+
+    env->ReleaseStringUTFChars(jjson, json_str);
+
     return env->NewStringUTF(out_str.c_str());
 }
