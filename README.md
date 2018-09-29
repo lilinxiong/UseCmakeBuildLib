@@ -53,3 +53,12 @@ Google例子:https://github.com/googlesamples/android-ndk/tree/master/hello-libs
     ...
     }
     ```
+
+### OTHER
+提一个问题：
+```
+env->GetStringUTFChars(string, NULL);
+env->ReleaseStringUTFChars(string, const char*);
+```
+这两个必须成对出现吗？
+说出理由。
