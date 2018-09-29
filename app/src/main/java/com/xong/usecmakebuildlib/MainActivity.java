@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         /**---------------------------libajsoncpp---------------------------*/
 //        调用jsoncpp.a生成json
-//        String outputJson = NativeJsonALib.outputJsonA("xong", "21", "man");
+//        String outputJson = NativeJsonALib.outputJsonA("xong", "21", "man", "a");
 //        tv_libs_content.setText(outputJson);
 ////      调用jsoncpp.a解析json
 //        String parseJson = NativeJsonALib.parseJsonA(outputJson);
