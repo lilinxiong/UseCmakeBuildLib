@@ -1,6 +1,6 @@
 ## 使用Cmake构建.a静态库和.so动态库
-Google例子:https://github.com/googlesamples/android-ndk/tree/master/hello-libs
-
+* Google例子[hello-libs](https://github.com/googlesamples/android-ndk/tree/master/hello-libs)
+* 对应文章[关于在Android中使用CMake你所需要了解的一切](https://juejin.im/post/5bb025db5188255c38537198)
 ### Demo中子模块说明:
 
 * **libcode:**
